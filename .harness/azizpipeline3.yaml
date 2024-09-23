@@ -33,12 +33,6 @@ pipeline:
                         value: env
                   timeout: 10m
         tags: {}
-        variables:
-          - name: env
-            type: String
-            description: env to deploy to
-            required: false
-            value: <+input>
     - stage:
         name: APPROVAL STEP
         identifier: APPROVAL_STEP
@@ -135,12 +129,6 @@ pipeline:
                     outputVariables: []
                   timeout: 10m
         tags: {}
-  variables:
-    - name: deploy_env
-      type: String
-      description: environment to deploy to
-      required: false
-      value: staging
   notificationRules:
     - name: NOTIF-AZIZ
       identifier: NOTIFAZIZ
