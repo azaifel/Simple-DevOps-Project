@@ -25,7 +25,7 @@ pipeline:
                       spec:
                         script: |-
                           echo "stage A"
-                          env='<+project.name>'
+                          env="<+project.name>"
                     environmentVariables: []
                     outputVariables:
                       - name: env_output
