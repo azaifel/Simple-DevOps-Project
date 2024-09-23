@@ -24,7 +24,10 @@ pipeline:
                       type: Inline
                       spec:
                         script: echo "stage A"
-                    environmentVariables: []
+                    environmentVariables:
+                      - name: env
+                        type: String
+                        value: dev
                     outputVariables: []
                   timeout: 10m
         tags: {}
