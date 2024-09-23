@@ -141,3 +141,15 @@ pipeline:
       description: environment to deploy to
       required: false
       value: staging
+  notificationRules:
+    - name: NOTIF-AZIZ
+      identifier: NOTIFAZIZ
+      pipelineEvents:
+        - type: AllEvents
+      notificationMethod:
+        type: Email
+        spec:
+          userGroups: []
+          recipients:
+            - azaifel@gmail.com
+      enabled: true
