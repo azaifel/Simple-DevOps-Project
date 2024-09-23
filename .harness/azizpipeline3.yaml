@@ -124,7 +124,7 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo "stage D"
+                        script: echo "why is the other repo pipeline not working though? The simple repo works"
                     environmentVariables: []
                     outputVariables: []
                   timeout: 10m
