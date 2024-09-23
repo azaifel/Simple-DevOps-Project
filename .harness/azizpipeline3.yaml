@@ -39,6 +39,32 @@ pipeline:
             description: env to deploy to
             required: false
             value: <+input>
+    - stage:
+        name: APPROVAL STEP
+        identifier: APPROVAL_STEP
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: my-approval
+                  identifier: myapproval
+                  type: HarnessApproval
+                  timeout: 1d
+                  spec:
+                    approvalMessage: |-
+                      Please review the following information
+                      and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    approvers:
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                      userGroups:
+                        - _project_all_users
+                    isAutoRejectEnabled: false
+                    approverInputs: []
+        tags: {}
     - parallel:
         - stage:
             name: B
