@@ -31,6 +31,12 @@ pipeline:
                     outputVariables: []
                   timeout: 10m
         tags: {}
+        variables:
+          - name: env
+            type: String
+            description: env to deploy to
+            required: false
+            value: <+input>
     - parallel:
         - stage:
             name: B
