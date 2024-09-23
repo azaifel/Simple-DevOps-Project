@@ -23,12 +23,14 @@ pipeline:
                     source:
                       type: Inline
                       spec:
-                        script: echo "stage A"
-                    environmentVariables:
-                      - name: env
+                        script: |-
+                          echo "stage A"
+                          env='<+project.name>'
+                    environmentVariables: []
+                    outputVariables:
+                      - name: env_output
                         type: String
-                        value: dev
-                    outputVariables: []
+                        value: env
                   timeout: 10m
         tags: {}
         variables:
