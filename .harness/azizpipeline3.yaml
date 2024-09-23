@@ -24,7 +24,7 @@ pipeline:
                       type: Inline
                       spec:
                         script: |-
-                          echo "stage A"
+                          echo "stage A is the first stage"
                           env="<+project.name>"
                     environmentVariables: []
                     outputVariables:
@@ -78,7 +78,7 @@ pipeline:
                         source:
                           type: Inline
                           spec:
-                            script: echo "stage B"
+                            script: echo "stage B is the 2nd stage but runs parallel to C"
                         environmentVariables: []
                         outputVariables: []
                       timeout: 10m
