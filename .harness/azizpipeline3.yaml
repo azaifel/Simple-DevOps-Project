@@ -105,5 +105,5 @@ pipeline:
     - name: deploy_env
       type: String
       description: environment to deploy to
-      required: true
+      required: false
       value: staging
